@@ -39,7 +39,7 @@ Can be found [Here](https://drive.google.com/open?id=13AobBZtgLhz5dDsvR88-EVgvcx
     
     eg. 
     ```
-    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\total-sales-per-store\data.txt /input_dir/data.txt
+    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\total-sales-per-store\hadoop-streaming-python\data.txt /input_dir/data.txt
     ```
 4. Run
 
