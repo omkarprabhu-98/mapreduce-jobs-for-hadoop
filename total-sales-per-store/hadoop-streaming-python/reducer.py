@@ -19,7 +19,7 @@ def reducer():
             # produced by mapper
             if old_key and key != old_key:
                 # display sales computed for the previous key
-                results = [old_key, str (total_sales)]
+                results = [old_key, str(total_sales)]
                 print("\t".join(results))
                 # reset total sales value
                 total_sales = 0
