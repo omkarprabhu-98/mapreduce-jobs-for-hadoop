@@ -1,4 +1,4 @@
-#URL Access Frequency 
+# URL Access Frequency 
 
 ### Data set (Apache log from http://www.almhuette-raith.at/apache-log/access.log)
 Can be found [Here](https://drive.google.com/open?id=1pOZBMfIGk6ok5d4R65ORsYQRVX0CuqS1)
@@ -22,45 +22,60 @@ Can be found [Here](https://drive.google.com/open?id=1pOZBMfIGk6ok5d4R65ORsYQRVX
 #### Run on a Hadoop cluster
 1. Download the data set and move it to this folder
 2. Start hadoop cluster (Instructions in the project README.md file)
-3. Upload the data set to Hadoop DFS
+3. Create the input directory
 
-    For Windows (PowerShell):
+    For Windows (PowerShell) and Linux:
+    ```
+    > hadoop fs -mkdir /input_dir
+    ```
+4. Upload the data set to input directory in Hadoop DFS 
+
+    For Windows (PowerShell) and Linux:
     ```
     > hadoop fs -put <local-input-data-path> <hdfs-input-data-path>
     ```
     
     eg. 
     ```
-    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\url-access-frequency\hadoop-streaming-python\data.txt /input_dir/data.txt
+    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\total-sales-per-store\hadoop-streaming-python\data.txt /input_dir/data.txt
     ```
-4. Run
+5. Run
 
-    For Windows (PowerShell):
+    For Windows (PowerShell) and Linux:
     ```
-     > hadoop jar <local-absolute-path-to-hadoop-streaming-jar-file> \
-     -input <hdfs input dir location> \
-     -output <hdfs input dir location> \
-     -mapper <command-for-running-mapper.py> \
-     -reducer <command-for-running-reducer.py> \
-     -file <relative-path-to-mapper.py> \
+     > hadoop jar <local-absolute-path-to-hadoop-streaming-jar-file> `or\
+     -input <hdfs input dir location> `or\
+     -output <hdfs input dir location> `or\
+     -mapper <command-for-running-mapper.py> `or\
+     -reducer <command-for-running-reducer.py> `or\
+     -file <relative-path-to-mapper.py> `or\
      -file <relative-path-to-reducer.py>
     ```
     
-    eg.
+    eg. For Windows
     ```
-    > hadoop jar C:/Hadoop-2.8.4/share/hadoop/hadoop-streaming-2.8.4.jar \
+    > hadoop jar C:\Hadoop-2.8.4\share\hadoop\tools\lib\hadoop-streaming-2.8.4.jar `
+     -input /input_dir `
+     -output /output_dir `
+     -mapper "python mapper.py" `
+     -reducer "python reducer.py" `
+     -file mapper.py `
+     -file reducer.py
+    ```
+    
+    eg. For Linux
+    ```
+    > hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.8.4.jar \
      -input /input_dir \
      -output /output_dir \
-     -mapper "python mapper.py" \
-     -reducer "python reducer.py" \
+     -mapper "python3 mapper.py" \
+     -reducer "python3 reducer.py" \
      -file mapper.py \
      -file reducer.py
     ```
 6. Output is stored in `part-00000` file in `output_dir` on the Hadoop DFS
     
-    For Windows(PowerShell):
+    For Windows(PowerShell) and Linux:
     ```
     > hadoop fs -cat /output_dir/part-00000
     ``` 
-
-     
