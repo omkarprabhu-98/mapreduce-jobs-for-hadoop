@@ -24,7 +24,7 @@ class TotalSalesPerStore(luigi.contrib.hadoop.JobTask):
 
     # output location for this task
     def output(self):
-        return luigi.contrib.hdfs.HdfsTarget('/output_dir_luigi/')
+        return luigi.contrib.hdfs.HdfsTarget('/output_dir_luigi/out')
 
     def mapper(self, line):
         # strip of extra whitespaces, also split on tab and put the data in a array

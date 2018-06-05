@@ -45,14 +45,14 @@ Can be found [Here](https://drive.google.com/open?id=13AobBZtgLhz5dDsvR88-EVgvcx
     ```
     $ PYTHONPATH='' luigi --module total_sales_per_store TotalSalesPerStore --local-scheduler
     ```
-6. Output should be in the `part-*` files in `output_dir_luigi` directory in HDFS
+6. Output should be in the `part-*` files in `output_dir_luigi/out` directory in HDFS
     
     Run the following to check files
     ```
-    $ hadoop fs -ls /output_dir_luigi/
+    $ hadoop fs -ls /output_dir_luigi/out/
     ``` 
     
     Check contents of one file 
     ```
-    $ hadoop fs -cat /output_dir_luigi/part-00000
+    $ hadoop fs -cat /output_dir_luigi/out/part-00000
     ```
