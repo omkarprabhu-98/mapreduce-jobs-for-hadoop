@@ -78,7 +78,7 @@ Can be found [Here](https://drive.google.com/open?id=13AobBZtgLhz5dDsvR88-EVgvcx
     
     eg. For Linux
     ```
-    > hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.8.4.jar \
+    > hadoop jar /urs/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.8.4.jar \
      -input /input_dir \
      -output /output_dir \
      -mapper "python3 mapper.py" \

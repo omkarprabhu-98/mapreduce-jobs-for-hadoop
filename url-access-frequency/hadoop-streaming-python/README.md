@@ -19,6 +19,11 @@ Can be found [Here](https://drive.google.com/open?id=1pOZBMfIGk6ok5d4R65ORsYQRVX
     ```
     -TotalCount n (sets the no of lines to read from the file mentioned)
     
+    For Linux :
+    ```bash
+    $ head -n 50 data.txt | python3 mapper.py | sort | python3 reducer.py
+    ```
+        
 #### Run on a Hadoop cluster
 1. Download the data set and move it to this folder
 2. Start hadoop cluster (Instructions in the project README.md file)
@@ -65,7 +70,7 @@ Can be found [Here](https://drive.google.com/open?id=1pOZBMfIGk6ok5d4R65ORsYQRVX
     
     eg. For Linux
     ```
-    > hadoop jar /home/hduser/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.8.4.jar \
+    > hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.8.4.jar \
      -input /input_dir \
      -output /output_dir \
      -mapper "python3 mapper.py" \
