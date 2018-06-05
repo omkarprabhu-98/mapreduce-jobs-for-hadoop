@@ -6,7 +6,7 @@ Contains a collection of example of jobs in python for Hadoop using the MapReduc
 
 1. Hadoop
     
-    #### For Windows:
+    #### For Windows 10:
     
     Follow [this](https://github.com/MuhammadBilalYar/Hadoop-On-Window)
 
@@ -22,9 +22,17 @@ Contains a collection of example of jobs in python for Hadoop using the MapReduc
 
 2. Install Python (Used Python 3.6 in my virtual environment) and pip (Used latest version for python3)
 
-3. Luigi
-
+3. Luigi 
+    
+    Used Python 2.7.15 for Ubuntu with luigi 2.7.5.  
+    
     Run the command 
     ```
     pip install luigi
     ```
+    
+    Errors:
+    
+    1. Windows 10: Problem when running luigi [View here](https://github.com/spotify/luigi/issues/2218)   
+    2. Python 3.6 on Ubuntu: mechanizer module not available only for python 2.x versions
+    

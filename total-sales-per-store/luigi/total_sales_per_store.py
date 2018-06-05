@@ -17,13 +17,14 @@ class InputData(luigi.ExternalTask):
 
 # this task run a hadoop job over the target data returned by the InputData task
 # writes the result into its output target
-class TotalSalesPerCost(luigi.contrib.hadoop.JobTask):
-
+class TotalSalesPerStore(luigi.contrib.hadoop.JobTask):
+    # Dependant tasks
     def requires(self):
         return InputData()
 
+    # output location for this task
     def output(self):
-        return luigi.contrib.hdfs.HdfsTarget('/output_dir_luigi/out.txt')
+        return luigi.contrib.hdfs.HdfsTarget('/output_dir_luigi/')
 
     def mapper(self, line):
         # strip of extra whitespaces, also split on tab and put the data in a array
@@ -34,11 +35,13 @@ class TotalSalesPerCost(luigi.contrib.hadoop.JobTask):
         if len(data) == 6:
             # get the fields
             data, time, store, item, cost, payment = data
+            # produce the intermidiate key value pair
             yield store, float(cost)
 
     def reducer(self, key, values):
+        # sum over the values for a key
         yield key, sum(values)
 
 
 if __name__ == '__main__':
-    luigi.build([TotalSalesPerCost()], local_scheduler=True)
+    luigi.build([TotalSalesPerStore()], local_scheduler=True)
