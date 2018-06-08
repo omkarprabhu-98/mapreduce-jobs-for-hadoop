@@ -14,10 +14,10 @@ class UrlAccessFrequency(luigi.contrib.hadoop.JobTask):
     regex = r'GET\s(.*?)\s'
 
     def requires(self):
-        return InputTask('/output_dir_luigi/out')
+        return InputTask()
 
     def output(self):
-        return luigi.contrib.hdfs.HdfsTarget('')
+        return luigi.contrib.hdfs.HdfsTarget('/output_dir_luigi/out')
 
     def mapper(self, line):
         # regex search to get data
