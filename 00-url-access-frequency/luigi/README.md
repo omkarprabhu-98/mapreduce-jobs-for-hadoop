@@ -1,12 +1,3 @@
-# URL Access Frequency 
-
-### Data set (Apache log from http://www.almhuette-raith.at/apache-log/access.log)
-Can be found [Here](https://drive.google.com/open?id=1pOZBMfIGk6ok5d4R65ORsYQRVX0CuqS1)
-
-### Key: value chosen for MapReduce
-
-* URL: 1
-
 ### Usage 
 1. Download the data set and move it to this folder
 2. Start hadoop cluster (Instructions in the project README.md file)

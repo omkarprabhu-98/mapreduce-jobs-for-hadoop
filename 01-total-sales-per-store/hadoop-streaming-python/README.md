@@ -1,20 +1,3 @@
-# Total Sales per Store
-
-Sample task given in [Intro to Hadoop and MapReduce](www.udacity.com/course/intro-to-hadoop-and-mapreduce--ud617) course on Udacity
-
-### Data set (tab delimited)
-Can be found [Here](https://drive.google.com/open?id=13AobBZtgLhz5dDsvR88-EVgvcxyDXfFp)
-* Date
-* Time
-* Store-Name
-* Product-Type
-* Cost
-* Method
-
-### Key: value chosen for MapReduce
-
-* Store-Name: Cost
-
 ### Usage 
 
 #### Test Locally
@@ -50,7 +33,7 @@ Can be found [Here](https://drive.google.com/open?id=13AobBZtgLhz5dDsvR88-EVgvcx
     
     eg. 
     ```
-    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\total-sales-per-store\hadoop-streaming-python\data.txt /input_dir/data.txt
+    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\01-total-sales-per-store\hadoop-streaming-python\data.txt /input_dir/data.txt
     ```
 5. Run
 

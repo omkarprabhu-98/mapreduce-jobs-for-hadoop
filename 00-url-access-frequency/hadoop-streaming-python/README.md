@@ -1,11 +1,3 @@
-# URL Access Frequency 
-
-### Data set (Apache log from http://www.almhuette-raith.at/apache-log/access.log)
-Can be found [Here](https://drive.google.com/open?id=1pOZBMfIGk6ok5d4R65ORsYQRVX0CuqS1)
-
-### Key: value chosen for MapReduce
-
-* URL: 1
 
 ### Usage 
 
@@ -42,7 +34,7 @@ Can be found [Here](https://drive.google.com/open?id=1pOZBMfIGk6ok5d4R65ORsYQRVX
     
     eg. 
     ```
-    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\total-sales-per-store\hadoop-streaming-python\data.txt /input_dir/data.txt
+    > hadoop fs -put P:\PyCharmProjects\mapreduce-jobs-for-hadoop\00-url-access-frequency\hadoop-streaming-python\data.txt /input_dir/data.txt
     ```
 5. Run
 
