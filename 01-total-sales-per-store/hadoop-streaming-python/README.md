@@ -69,6 +69,27 @@
      -file mapper.py \
      -file reducer.py
     ```
+    
+    #### To run with [Combiner]() follow this command
+    eg. For Windows
+    ```
+    > hadoop jar C:\Hadoop-2.8.4\share\hadoop\tools\lib\hadoop-streaming-2.8.4.jar `
+     -input /input_dir `
+     -output /output_dir `
+     -mapper "python mapper.py" `
+     -combiner "python reducer.py" `
+     -reducer "python reducer.py" `
+     -file mapper.py `
+     -file reducer.py
+    ```
+    
+    <b>Differences are visible in the input records given to reducer</b>
+    
+    <img src="screenshots/without_combiner.PNG">
+    
+    <img src="screenshots/with_combiner.PNG">
+    
+    
 6. Output is stored in `part-00000` file in `output_dir` on the Hadoop DFS
     
     For Windows(PowerShell) and Linux:
