@@ -1,5 +1,7 @@
 .idea
 venv
-*data*
+*data.txt
+*.gz
+*.zip
 *.tsv
 *.zip
