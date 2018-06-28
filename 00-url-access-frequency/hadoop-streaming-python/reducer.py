@@ -29,6 +29,11 @@ def reducer():
             # update total value
             total_value += int(value)
 
+    # print out the last key:value
+    if old_key is not None:
+        results = [old_key, str(total_value)]
+        print("\t".join(results))
+
 
 def main():
     reducer()

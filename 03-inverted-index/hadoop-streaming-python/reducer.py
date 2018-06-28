@@ -26,6 +26,10 @@ def reducer():
         # append
         node_id_list.append(node_id)
 
+    # print out the last key:value
+    if old_word is not None:
+        print('\t'.join([old_word, str(node_id_list)]))
+
 
 if __name__ == '__main__':
     reducer()
