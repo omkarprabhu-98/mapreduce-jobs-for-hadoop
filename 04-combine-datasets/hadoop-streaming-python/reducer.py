@@ -32,6 +32,7 @@ def reducer():
             row['gold'] = data[2]
             row['silver'] = data[3]
             row['bronze'] = data[4]
+            continue
         elif len(data) == 9:
             # fill data from forum post
             i = 0
@@ -40,18 +41,19 @@ def reducer():
                     break
                 row[key] = data[i]
                 i += 1
+            print(row)
 
         # new user ?
-        if old_user is not None and old_user != row['user_id']:
-            print(row)
-            # do not clear row as next line with
-            # let it be overwritten by the next line
-            # row = dict({key: None for key in row})
-
-        old_user = row['user_id']
-
-    if old_user is not None:
-        print(row)
+    #     if old_user is not None and old_user != row['user_id']:
+    #         print(row)
+    #         # do not clear row as next line with
+    #         # let it be overwritten by the next line
+    #         # row = dict({key: None for key in row})
+    #
+    #     old_user = row['user_id']
+    #
+    # if old_user is not None:
+    #     print(row)
 
 
 if __name__ == '__main__':

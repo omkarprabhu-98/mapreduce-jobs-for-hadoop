@@ -1,4 +1,4 @@
-# Total Sales per Store
+# Inverted Index
 
 Task given in [Intro to Hadoop and MapReduce](www.udacity.com/course/intro-to-hadoop-and-mapreduce--ud617) course on Udacity
 

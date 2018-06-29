@@ -11,11 +11,16 @@ def mapper():
         # data for line forum nodes
         if len(data) == 19:
             id, title, tagnames, author_id, body, node_type, parent_id, abs_parent_id, added_at, score, state_string, last_edited_id, last_activity_by_id, last_activity_at, active_revision_id, extra, extra_ref_id, extra_count, marked = data
-            print('\t'.join([author_id, int(id), title, tagnames, node_type, parent_id, abs_parent_id, added_at, score]))
+            print('\t'.join([author_id, id, title, tagnames, node_type, parent_id, abs_parent_id, added_at, score]))
         # data for forum users
         elif len(data) == 5:
             user_ptr_id, reputation, gold, silver, bronze = data
-            print('\t'.join([int(user_ptr_id), reputation, gold, silver, bronze]))
+            # if forum node data comes here because of newline in body
+            # this data become of length 5
+            # so body id identified by presence of <
+            if '<' in bronze:
+                continue
+            print('\t'.join([user_ptr_id, reputation, gold, silver, bronze]))
 
 
 if __name__ == '__main__':
